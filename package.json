@@ -1,0 +1,14 @@
+{
+  "name": "dozuki-stack-fit-demo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Dozuki-aligned connected-worker demo covering Next.js, NestJS, TypeScript, PHP, SQL, and AWS debugging.",
+  "scripts": {
+    "test:validation": "node validation/run-review-tests.mjs",
+    "test:validation:node-test": "node --test validation/review-engine.test.mjs"
+  },
+  "workspaces": [
+    "frontend",
+    "api"
+  ]
+}
