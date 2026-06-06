@@ -4,6 +4,16 @@ Portfolio project for the Dozuki Software Engineer II interview.
 
 This is a small connected-worker system design and code sample. It shows how I would work across Dozuki's stack: a React/Next.js frontend, a NestJS/TypeScript API, relational data modeling, legacy PHP compatibility, AI-assisted review logic, and AWS-style debugging.
 
+## Live Demo
+
+The frontend is configured for static export and GitHub Pages deployment. Publishing notes are in `docs/github-publish.md`.
+
+Suggested repo name:
+
+```text
+dozuki-stack-fit-demo
+```
+
 ## Product Idea
 
 Manufacturing teams need digital work instructions that are clear, auditable, and safe to execute. This demo models a simplified workflow:
@@ -35,6 +45,8 @@ Dozuki's product lives where documentation, training, quality, safety, and softw
 - Clear documentation for engineers and non-engineers.
 
 The source notes in `docs/sources.md` map this project to Dozuki's public job posting and product pages.
+
+For the short interview version, see `docs/interview-packet.md`.
 
 ## How I Would Build This In Production
 
@@ -74,3 +86,7 @@ node --test validation/review-engine.test.mjs
 The honest story is not "I have already worked in Dozuki's exact stack for years." The stronger story is:
 
 > I have worked in production systems where data accuracy, user workflow, documentation, technical support, debugging, and AI-assisted delivery mattered. This demo shows how I am translating that background into Dozuki's stack: React/Next.js, NestJS, TypeScript, PHP, SQL, and AWS debugging.
+
+## Audit Note
+
+`npm audit --audit-level=high` currently passes with no high or critical findings. npm reports two moderate findings through Next/PostCSS; the available forced fix would introduce a breaking downgrade, so this project keeps the current Next.js version and documents the result.
