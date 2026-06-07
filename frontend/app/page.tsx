@@ -1,31 +1,54 @@
-import { InstructionDashboard } from "../components/InstructionDashboard";
 import { CloudDebugTrace } from "../components/CloudDebugTrace";
+import { ConnectedWorkerCommandCenter } from "../components/ConnectedWorkerCommandCenter";
 import { StackEvidence } from "../components/StackEvidence";
-import { getInstructionSummary } from "../lib/demo-data";
 
-export default async function Page() {
-  const instruction = await getInstructionSummary("line-changeover-101");
-
+export default function Page() {
   return (
     <main>
       <header className="hero">
-        <p className="eyebrow">Dozuki Software Engineer II Portfolio Demo</p>
-        <h1>Connected-worker quality workflow with AI review</h1>
-        <p>
-          A focused demo showing how I would work across React/Next.js,
-          NestJS/TypeScript, SQL, legacy PHP, AWS debugging, and human-reviewed
-          AI workflows for manufacturing operations.
-        </p>
-        <div className="hero-actions" aria-label="Project proof points">
-          <span>Static Next.js build passes</span>
-          <span>API TypeScript build passes</span>
-          <span>Backend tests pass</span>
+        <div className="hero-grid">
+          <div>
+            <p className="eyebrow">Dozuki Software Engineer II Portfolio Demo</p>
+            <h1>Industrial AI workflow console for frontline quality.</h1>
+            <p>
+              A polished connected-worker demo that shows how I think across
+              React/Next.js, NestJS, TypeScript, SQL, legacy PHP, AWS debugging,
+              human-in-the-loop AI, auditability, and manufacturing operations.
+            </p>
+            <div className="hero-actions" aria-label="Project proof points">
+              <span>Interactive workflow</span>
+              <span>Static Next.js deploy</span>
+              <span>Backend tests pass</span>
+              <span>GitHub Pages live</span>
+            </div>
+          </div>
+          <div className="hero-product-card" aria-label="Demo summary">
+            <div className="hero-product-top">
+              <span>Line 4</span>
+              <strong>Changeover Release</strong>
+            </div>
+            <div className="hero-progress">
+              <span style={{ width: "72%" }} />
+            </div>
+            <div className="hero-product-list">
+              <p>
+                <strong>AI finding:</strong> seal sample evidence missing
+              </p>
+              <p>
+                <strong>Trace:</strong> CloudWatch to S3 to RDS
+              </p>
+              <p>
+                <strong>Impact:</strong> fewer defects, faster onboarding, cleaner audits
+              </p>
+            </div>
+          </div>
         </div>
       </header>
 
-      <InstructionDashboard instruction={instruction} />
+      <ConnectedWorkerCommandCenter />
       <StackEvidence />
       <CloudDebugTrace />
     </main>
   );
 }
+
