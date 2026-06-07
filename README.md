@@ -49,8 +49,6 @@ Dozuki's product lives where documentation, training, quality, safety, and softw
 
 The source notes in `docs/sources.md` map this project to Dozuki's public job posting and product pages.
 
-For the short interview version, see `docs/interview-packet.md`.
-
 ## How I Would Build This In Production
 
 - **Frontend:** Next.js, React, TypeScript.
@@ -83,12 +81,6 @@ If Node's built-in test runner is available in the environment, this also works:
 ```powershell
 node --test validation/review-engine.test.mjs
 ```
-
-## Interview Positioning
-
-The honest story is not "I have already worked in Dozuki's exact stack for years." The stronger story is:
-
-> I have worked in production systems where data accuracy, user workflow, documentation, technical support, debugging, and AI-assisted delivery mattered. This demo shows how I am translating that background into Dozuki's stack: React/Next.js, NestJS, TypeScript, PHP, SQL, and AWS debugging.
 
 ## Audit Note
 
