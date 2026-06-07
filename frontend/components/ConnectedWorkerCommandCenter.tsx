@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 
-type Mode = "author" | "execute" | "review" | "trace";
+type Mode = "author" | "execute" | "review" | "trace" | "audit";
 
 type Step = {
   id: string;
@@ -60,6 +60,11 @@ const modeCopy: Record<Mode, { label: string; title: string; text: string }> = {
     label: "Trace",
     title: "Cloud debugging follows one request across UI, API, storage, and data.",
     text: "The trace view shows how I would debug a production issue with CloudWatch logs, S3 evidence, and RDS/PostgreSQL rows."
+  },
+  audit: {
+    label: "Audit",
+    title: "Every action leaves evidence an engineer, QA lead, or auditor can inspect.",
+    text: "The audit view connects UI events to SQL tables, API contracts, test gates, and the legacy PHP migration path."
   }
 };
 
@@ -124,7 +129,7 @@ export function ConnectedWorkerCommandCenter() {
       </div>
 
       <div className="mode-tabs" role="tablist" aria-label="Demo modes">
-        {(["author", "execute", "review", "trace"] as Mode[]).map((item) => (
+        {(["author", "execute", "review", "trace", "audit"] as Mode[]).map((item) => (
           <button
             aria-selected={mode === item}
             className="mode-tab"
@@ -153,6 +158,13 @@ export function ConnectedWorkerCommandCenter() {
           )}
           {mode === "review" && <ReviewView findings={findings} status={status} />}
           {mode === "trace" && <TraceView steps={steps} />}
+          {mode === "audit" && (
+            <AuditView
+              auditEvents={buildAuditEvents(steps, findings)}
+              findings={findings}
+              status={status}
+            />
+          )}
         </div>
 
         <aside className="console-panel side-console" aria-label="Engineering proof">
@@ -172,6 +184,7 @@ export function ConnectedWorkerCommandCenter() {
               workflows, and help ship guarded AI features.
             </strong>
           </div>
+          <QualityGatePanel />
         </aside>
       </div>
     </section>
@@ -292,6 +305,40 @@ function ReviewView({
   );
 }
 
+function AuditView({
+  auditEvents,
+  findings,
+  status
+}: {
+  auditEvents: ReturnType<typeof buildAuditEvents>;
+  findings: ReturnType<typeof buildFindings>;
+  status: { completed: number; evidence: number; readiness: number };
+}) {
+  return (
+    <div className="audit-workbench">
+      <div className="audit-timeline">
+        {auditEvents.map((event) => (
+          <article className="audit-event" key={`${event.time}-${event.title}`}>
+            <span>{event.time}</span>
+            <strong>{event.title}</strong>
+            <p>{event.detail}</p>
+          </article>
+        ))}
+      </div>
+      <div className="sql-inspector">
+        <div className="inspector-header">
+          <span>SQL Inspector</span>
+          <strong>{status.readiness}% readiness</strong>
+        </div>
+        <pre>{buildSqlSnippet(findings.length)}</pre>
+      </div>
+      <ApiContractPanel findings={findings} />
+      <MigrationPanel />
+      <AiGuardrailPanel findings={findings} />
+    </div>
+  );
+}
+
 function TraceView({ steps }: { steps: Step[] }) {
   const missing =
     steps.find((step) => step.completed && !step.evidenceCaptured) ??
@@ -323,6 +370,96 @@ function TraceView({ steps }: { steps: Step[] }) {
   );
 }
 
+function QualityGatePanel() {
+  const gates = [
+    ["Validation engine", "PASS"],
+    ["API unit tests", "PASS"],
+    ["API TypeScript build", "PASS"],
+    ["Next.js static export", "PASS"],
+    ["PHP syntax check", "PASS"]
+  ];
+
+  return (
+    <div className="quality-gates" aria-label="Quality gates">
+      <span>Quality Gates</span>
+      {gates.map(([label, result]) => (
+        <div className="quality-gate" key={label}>
+          <strong>{label}</strong>
+          <em>{result}</em>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function ApiContractPanel({ findings }: { findings: ReturnType<typeof buildFindings> }) {
+  const payload = {
+    workRunId: "run_8392",
+    requestId: "req_20260606_1542_changeover",
+    status: findings.length === 0 ? "ready_for_review" : "needs_attention",
+    findings: findings.map((finding) => finding.title)
+  };
+
+  return (
+    <div className="contract-panel">
+      <div className="inspector-header">
+        <span>API Contract</span>
+        <strong>POST /api/ai-review/work-run</strong>
+      </div>
+      <pre>{JSON.stringify(payload, null, 2)}</pre>
+    </div>
+  );
+}
+
+function MigrationPanel() {
+  return (
+    <div className="migration-panel">
+      <div className="inspector-header">
+        <span>Legacy Migration</span>
+        <strong>PHP to TypeScript adapter</strong>
+      </div>
+      <div className="migration-flow">
+        <div>
+          <span>Legacy PHP</span>
+          <strong>InstructionSummaryGateway</strong>
+        </div>
+        <div>
+          <span>Adapter</span>
+          <strong>Normalize snake_case rows</strong>
+        </div>
+        <div>
+          <span>NestJS</span>
+          <strong>Typed Instruction model</strong>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AiGuardrailPanel({ findings }: { findings: ReturnType<typeof buildFindings> }) {
+  const stages = [
+    ["Raw operator data", "Step state and evidence values only"],
+    ["Deterministic validation", `${findings.length} blocking or warning checks`],
+    ["Structured AI review", "JSON findings with severity and action"],
+    ["Human approval", findings.length === 0 ? "Supervisor can release" : "Supervisor must resolve risks"]
+  ];
+
+  return (
+    <div className="guardrail-panel">
+      <div className="inspector-header">
+        <span>AI Guardrails</span>
+        <strong>Human in the loop</strong>
+      </div>
+      {stages.map(([stage, detail]) => (
+        <div className="guardrail-stage" key={stage}>
+          <strong>{stage}</strong>
+          <p>{detail}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function buildFindings(steps: Step[]) {
   const findings = [];
 
@@ -347,3 +484,61 @@ function buildFindings(steps: Step[]) {
   return findings;
 }
 
+function buildAuditEvents(steps: Step[], findings: ReturnType<typeof buildFindings>) {
+  const events = [
+    {
+      time: "08:42",
+      title: "Instruction v3.2 approved",
+      detail: "Quality Ops published a controlled procedure with required evidence gates."
+    },
+    {
+      time: "09:13",
+      title: "Operator started work run",
+      detail: "Request ID req_20260606_1542_changeover created for Packaging Line 4."
+    }
+  ];
+
+  for (const step of steps) {
+    if (step.completed) {
+      events.push({
+        time: step.evidenceCaptured ? "09:22" : "09:19",
+        title: `${step.title} completed`,
+        detail: step.evidenceCaptured
+          ? `${step.evidence} evidence attached and ready for supervisor review.`
+          : `Completion recorded, but required ${step.evidence} evidence is missing.`
+      });
+    }
+  }
+
+  events.push({
+    time: "09:31",
+    title: findings.length === 0 ? "AI review passed" : "AI review generated findings",
+    detail:
+      findings.length === 0
+        ? "No blocking issues found after deterministic validation."
+        : `${findings.length} issue(s) require human review before line release.`
+  });
+
+  return events;
+}
+
+function buildSqlSnippet(findingCount: number) {
+  return `SELECT
+  wr.request_id,
+  step.sequence,
+  step.title,
+  result.status,
+  result.evidence_url,
+  COUNT(finding.id) AS finding_count
+FROM work_runs wr
+JOIN instruction_steps step
+  ON step.instruction_id = wr.instruction_id
+LEFT JOIN step_results result
+  ON result.work_run_id = wr.id
+ AND result.step_id = step.id
+LEFT JOIN review_findings finding
+  ON finding.work_run_id = wr.id
+WHERE wr.request_id = 'req_20260606_1542_changeover'
+GROUP BY wr.request_id, step.sequence, step.title, result.status, result.evidence_url
+-- current demo finding count: ${findingCount}`;
+}

@@ -30,8 +30,10 @@ Manufacturing teams need digital work instructions that are clear, auditable, an
 - **OOP and modern development:** Service classes, DTOs, dependency injection, typed domain models, deterministic validation before AI output.
 - **TypeScript and NestJS:** Controller/service/module style, route boundaries, testable backend logic.
 - **PHP:** Legacy-style endpoint and gateway pattern with parameterized SQL.
+- **Legacy migration:** PHP repository/adapter classes plus a TypeScript adapter that normalize legacy rows into modern models.
 - **Data stack:** PostgreSQL-style schema for instructions, work runs, step results, review findings, and audit events.
 - **AWS cloud debugging:** CloudWatch-style log correlation, S3 evidence URLs, RDS query tracing, request IDs, and incident notes.
+- **Auditability:** Interactive audit timeline, SQL inspector, API contract panel, quality gates, and AI guardrail flow.
 
 ## Why It Fits Dozuki
 
@@ -43,6 +45,7 @@ Dozuki's product lives where documentation, training, quality, safety, and softw
 - Legacy system compatibility.
 - Cloud troubleshooting habits.
 - Clear documentation for engineers and non-engineers.
+- A visible product workflow that connects operator behavior to audit events, SQL, API contracts, and test gates.
 
 The source notes in `docs/sources.md` map this project to Dozuki's public job posting and product pages.
 

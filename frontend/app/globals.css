@@ -252,7 +252,7 @@ body {
   border-radius: 20px;
   display: grid;
   gap: 8px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   margin-bottom: 18px;
   padding: 8px;
 }
@@ -346,7 +346,7 @@ body {
 }
 
 .operator-step {
-  align-items: start;
+  align-items: flex-start;
   display: grid;
   gap: 16px;
   grid-template-columns: 44px minmax(0, 1fr) auto;
@@ -489,6 +489,159 @@ body {
 .impact-card strong {
   display: block;
   line-height: 1.35;
+}
+
+.quality-gates {
+  background: rgb(255 255 255 / 8%);
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 20px;
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 18px;
+}
+
+.quality-gates > span {
+  color: #5db8ff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.quality-gate {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quality-gate strong {
+  color: #dbe8f5;
+  font-size: 0.9rem;
+}
+
+.quality-gate em {
+  background: #d7f7e5;
+  border-radius: 999px;
+  color: #0c5f37;
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 900;
+  padding: 5px 8px;
+}
+
+.audit-workbench {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  margin-top: 20px;
+}
+
+.audit-timeline,
+.sql-inspector,
+.contract-panel,
+.migration-panel,
+.guardrail-panel {
+  background: rgb(255 255 255 / 8%);
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.audit-timeline {
+  display: grid;
+  gap: 12px;
+}
+
+.audit-event {
+  border-left: 3px solid #5db8ff;
+  padding-left: 14px;
+}
+
+.audit-event span,
+.inspector-header span,
+.migration-flow span {
+  color: #5db8ff;
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.audit-event strong,
+.inspector-header strong {
+  display: block;
+}
+
+.audit-event p {
+  margin: 4px 0 0;
+}
+
+.sql-inspector,
+.contract-panel,
+.migration-panel,
+.guardrail-panel {
+  min-width: 0;
+}
+
+.contract-panel,
+.migration-panel,
+.guardrail-panel {
+  grid-column: 1 / -1;
+}
+
+.inspector-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.sql-inspector pre,
+.contract-panel pre {
+  background: #02101d;
+  border: 1px solid rgb(93 184 255 / 20%);
+  border-radius: 16px;
+  color: #d8f6ff;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin: 0;
+  overflow-x: auto;
+  padding: 16px;
+}
+
+.migration-flow {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.migration-flow div,
+.guardrail-stage {
+  background: rgb(255 255 255 / 8%);
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.migration-flow strong,
+.guardrail-stage strong {
+  display: block;
+}
+
+.guardrail-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.guardrail-panel .inspector-header {
+  margin-bottom: 0;
+}
+
+.guardrail-stage p {
+  margin: 5px 0 0;
 }
 
 .section {
@@ -673,8 +826,16 @@ body {
   .stack-grid,
   .trace-list,
   .metric-strip,
-  .mode-tabs {
+  .mode-tabs,
+  .audit-workbench,
+  .migration-flow {
     grid-template-columns: 1fr;
+  }
+
+  .contract-panel,
+  .migration-panel,
+  .guardrail-panel {
+    grid-column: auto;
   }
 
   .hero {
@@ -691,6 +852,6 @@ body {
 
   .evidence-pill {
     grid-column: 1 / -1;
-    justify-self: start;
+    justify-self: flex-start;
   }
 }

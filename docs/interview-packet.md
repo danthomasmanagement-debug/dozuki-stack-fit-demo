@@ -10,8 +10,11 @@ The demo includes:
 - NestJS/TypeScript API structure with modules, services, controllers, and DTO-style inputs.
 - PostgreSQL schema for instructions, step results, review findings, and audit events.
 - Legacy PHP compatibility endpoint for reading instruction summaries.
+- PHP migration adapter classes that normalize legacy rows into modern API payloads.
+- A NestJS-side adapter test showing the same migration boundary in TypeScript.
 - AWS debugging flow using request IDs, CloudWatch, RDS/PostgreSQL, and S3 evidence paths.
-- Tests for deterministic review logic.
+- Tests for deterministic review logic and legacy-to-modern data normalization.
+- Interactive audit timeline, SQL inspector, API contract, AI guardrail, and quality gate panels.
 
 ## What I Would Say
 
@@ -55,4 +58,3 @@ The demo includes:
 - What kinds of customer-facing issues are most expensive or painful right now?
 - How do engineers balance new feature work with legacy modernization?
 - What does success look like for a Software Engineer II in the first 90 days?
-

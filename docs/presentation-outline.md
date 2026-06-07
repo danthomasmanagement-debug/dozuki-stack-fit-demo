@@ -26,7 +26,14 @@
 - Operator completes required steps.
 - Backend validates missing evidence.
 - AI review assists, but deterministic checks stay in control.
-- Supervisor sees findings and debugging context.
+- Supervisor sees findings, audit events, SQL traceability, and debugging context.
+
+## Slide 4B: Migration And Audit Depth
+
+- Legacy PHP adapter normalizes existing database rows.
+- NestJS adapter consumes the same instruction shape.
+- SQL inspector shows how evidence and findings are traceable.
+- Audit timeline makes every user/system action reviewable.
 
 ## Slide 5: Why The Design Matters
 
@@ -39,7 +46,7 @@
 - Data/API debugging tickets.
 - Documentation and runbook improvements.
 - UI polish and accessibility fixes.
-- Test coverage around validation logic.
+- Test coverage around validation and legacy migration logic.
 - AI workflow experiments with clear guardrails.
 
 ## Slide 7: 30/60/90 Day Plan
@@ -51,4 +58,3 @@
 ## Slide 8: Closing
 
 > I am not selling myself as someone who already knows every line of this stack. I am showing that I can learn it quickly, work carefully in production systems, and turn technical complexity into useful software for real users.
-
