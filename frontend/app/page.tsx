@@ -1,5 +1,6 @@
 import { CloudDebugTrace } from "../components/CloudDebugTrace";
 import { ConnectedWorkerCommandCenter } from "../components/ConnectedWorkerCommandCenter";
+import { ArchitectureDepthShowcase } from "../components/ArchitectureDepthShowcase";
 import { StackEvidence } from "../components/StackEvidence";
 
 export default function Page() {
@@ -46,9 +47,9 @@ export default function Page() {
       </header>
 
       <ConnectedWorkerCommandCenter />
+      <ArchitectureDepthShowcase />
       <StackEvidence />
       <CloudDebugTrace />
     </main>
   );
 }
-
