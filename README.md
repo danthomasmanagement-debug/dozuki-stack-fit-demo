@@ -1,8 +1,8 @@
 # Dozuki Stack Fit Demo
 
-Portfolio project for the Dozuki Software Engineer II interview.
+Connected-worker engineering demo for manufacturing quality workflows.
 
-This is a small connected-worker system design and code sample. It shows how I would work across Dozuki's stack: a React/Next.js frontend, a NestJS/TypeScript API, relational data modeling, legacy PHP compatibility, AI-assisted review logic, and AWS-style debugging.
+This is a small connected-worker system design and code sample covering a React/Next.js frontend, a NestJS/TypeScript API, relational data modeling, legacy PHP compatibility, AI-assisted review logic, and AWS-style debugging.
 
 ## Live Demo
 

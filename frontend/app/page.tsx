@@ -9,12 +9,12 @@ export default function Page() {
       <header className="hero">
         <div className="hero-grid">
           <div>
-            <p className="eyebrow">Dozuki Software Engineer II Portfolio Demo</p>
+            <p className="eyebrow">Connected Worker Engineering Demo</p>
             <h1>Industrial AI workflow console for frontline quality.</h1>
             <p>
-              A polished connected-worker demo that shows how I think across
-              React/Next.js, NestJS, TypeScript, SQL, legacy PHP, AWS debugging,
-              human-in-the-loop AI, auditability, and manufacturing operations.
+              A connected-worker workflow for controlled instructions, operator
+              evidence capture, AI-assisted review, audit trails, legacy PHP
+              migration, and AWS-style production debugging.
             </p>
             <div className="hero-actions" aria-label="Project proof points">
               <span>Interactive workflow</span>

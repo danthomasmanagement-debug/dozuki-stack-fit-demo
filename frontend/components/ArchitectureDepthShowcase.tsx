@@ -2,7 +2,7 @@ const depthCards = [
   {
     kicker: "Audit Timeline",
     title: "Operator actions become reviewable system events.",
-    body: "The demo traces instruction approval, work-run start, evidence capture, AI review findings, and supervisor release as audit events."
+    body: "The workflow traces instruction approval, work-run start, evidence capture, AI review findings, and supervisor release as audit events."
   },
   {
     kicker: "SQL Inspector",
@@ -21,7 +21,7 @@ const depthCards = [
   },
   {
     kicker: "Quality Gates",
-    title: "The demo has real verification, not just screenshots.",
+    title: "Verification is built into the workflow.",
     body: "Validation tests, API unit tests, TypeScript build, Next.js static export, and PHP syntax checks all pass."
   }
 ];
@@ -31,10 +31,11 @@ export function ArchitectureDepthShowcase() {
     <section aria-labelledby="depth-title" className="depth-section">
       <div className="section-heading">
         <p className="eyebrow">Engineering Depth</p>
-        <h2 id="depth-title">The demo now shows how the system would actually be maintained.</h2>
+        <h2 id="depth-title">Built for maintainability, traceability, and controlled migration.</h2>
         <p>
-          These are the pieces I added to make the project feel closer to a real
-          Dozuki engineering problem instead of a shallow portfolio screen.
+          The workflow connects frontline actions to audit events, relational
+          data, API contracts, legacy migration boundaries, AI review guardrails,
+          and automated quality checks.
         </p>
       </div>
       <div className="depth-grid">
@@ -49,4 +50,3 @@ export function ArchitectureDepthShowcase() {
     </section>
   );
 }
-

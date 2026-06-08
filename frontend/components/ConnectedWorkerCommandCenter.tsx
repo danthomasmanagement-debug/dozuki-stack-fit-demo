@@ -59,7 +59,7 @@ const modeCopy: Record<Mode, { label: string; title: string; text: string }> = {
   trace: {
     label: "Trace",
     title: "Cloud debugging follows one request across UI, API, storage, and data.",
-    text: "The trace view shows how I would debug a production issue with CloudWatch logs, S3 evidence, and RDS/PostgreSQL rows."
+    text: "The trace view follows a production issue through CloudWatch logs, S3 evidence, and RDS/PostgreSQL rows."
   },
   audit: {
     label: "Audit",
@@ -110,9 +110,9 @@ export function ConnectedWorkerCommandCenter() {
           <p className="eyebrow">Interactive Demo</p>
           <h2 id="command-title">Connected worker command center</h2>
           <p>
-            A Dozuki-inspired slice of product engineering: author controlled
-            procedures, guide operators, review with AI guardrails, and debug
-            production evidence issues from request ID to database row.
+            A product-engineering slice for controlled procedures, guided
+            execution, AI review guardrails, and request-level production
+            debugging from browser state to database row.
           </p>
         </div>
         <div className="readiness-card" aria-label="Readiness score">
@@ -540,5 +540,5 @@ LEFT JOIN review_findings finding
   ON finding.work_run_id = wr.id
 WHERE wr.request_id = 'req_20260606_1542_changeover'
 GROUP BY wr.request_id, step.sequence, step.title, result.status, result.evidence_url
--- current demo finding count: ${findingCount}`;
+-- current finding count: ${findingCount}`;
 }

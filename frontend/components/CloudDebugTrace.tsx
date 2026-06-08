@@ -12,7 +12,7 @@ export function CloudDebugTrace() {
     <section aria-labelledby="debug-title" className="section trace-section">
       <div className="section-heading">
         <p className="eyebrow">AWS Debugging</p>
-        <h2 id="debug-title">How I would investigate missing evidence</h2>
+        <h2 id="debug-title">Missing evidence investigation path</h2>
         <p>
           The goal is not to guess. The goal is to follow one production event
           through logs, storage, database state, API response, and user impact.
@@ -27,4 +27,3 @@ export function CloudDebugTrace() {
     </section>
   );
 }
-

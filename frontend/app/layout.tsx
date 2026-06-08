@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Dozuki Stack Fit Demo",
-  description: "Connected-worker demo for a Dozuki Software Engineer II interview"
+  description: "Connected-worker engineering demo for manufacturing quality workflows"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -12,4 +12,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
