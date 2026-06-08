@@ -1,8 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Dozuki Stack Fit Demo",
-  description: "Connected-worker engineering demo for manufacturing quality workflows"
+  title: "LineGuard Connected Worker Workflow",
+  description:
+    "Fictional manufacturing workflow for guided instructions, evidence capture, audit trails, and production debugging"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -7,11 +7,11 @@ export async function getInstructionSummary(
   // GET /instructions/:instructionId/summary
   return {
     id: instructionId,
-    title: "Line Changeover Quality Check",
+    title: "Northstar Packaging Line 4 Changeover",
     description:
       "Prepare a packaging line for the next product run and capture evidence before release.",
     version: "v3.2",
-    lineName: "Packaging Line 4",
+    lineName: "Northstar Packaging Line 4",
     latestRequestId: "req_20260606_1542_changeover",
     steps: [
       {
@@ -35,4 +35,3 @@ export async function getInstructionSummary(
     ]
   };
 }
-

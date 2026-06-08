@@ -1,10 +1,10 @@
-# Interview Packet
+# Engineering Notes
 
 ## Project Summary
 
-I built a connected-worker quality workflow demo to show how my SQL, production support, documentation, AI-assisted engineering, and cloud-debugging background maps to Dozuki's engineering stack.
+LineGuard is a fictional connected-worker workflow for Northstar Components. It shows how a manufacturing quality process can move from static procedures into guided execution, evidence capture, AI-assisted review, audit events, and traceable production debugging.
 
-The demo includes:
+The project includes:
 
 - React/Next.js frontend for an operator/supervisor workflow.
 - NestJS/TypeScript API structure with modules, services, controllers, and DTO-style inputs.
@@ -16,23 +16,19 @@ The demo includes:
 - Tests for deterministic review logic and legacy-to-modern data normalization.
 - Interactive audit timeline, SQL inspector, API contract, AI guardrail, and quality gate panels.
 
-## What I Would Say
+## Design Position
 
-> I built this project because Dozuki's product sits at the intersection of manufacturing process quality, user experience, data integrity, documentation, and AI-assisted workflows. My background is strongest in production troubleshooting, SQL, data validation, documentation, and AI-supported technical work, so I wanted to show how I am translating that into your stack.
+The product story is intentionally narrow: one packaging-line changeover, one work run, one missing evidence issue, and one traceable path from the browser to the database. That keeps the workflow understandable while still showing frontend, backend, data, cloud, legacy, and AI concerns.
 
-## Best Fit Points
+## Engineering Strengths Shown
 
-- **SQL/data quality:** This is my strongest immediate overlap.
-- **Production debugging:** I know how to trace symptoms through data, logs, APIs, and user-facing behavior.
-- **Documentation:** I naturally write runbooks, investigation notes, and clear explanations.
-- **AI workflow discipline:** I use AI to accelerate work, but I validate output with tests, logs, and source evidence.
-- **Remote collaboration:** I have worked in remote environments with cross-functional teams.
+- **SQL/data quality:** evidence and findings are modeled as inspectable relational records.
+- **Production debugging:** the same request ID appears across UI, API, cloud logs, S3 evidence, and RDS/PostgreSQL rows.
+- **Documentation:** architecture notes, debugging notes, and publishing notes live with the code.
+- **AI workflow discipline:** AI assists review after deterministic validation, not before it.
+- **Remote collaboration:** the project is small enough to review asynchronously and clear enough for product, QA, and engineering readers.
 
-## Honest Gap Framing
-
-> I have not worked professionally in this exact stack end to end. What I have done is work in production systems where correctness, traceability, data quality, and stakeholder communication mattered. This demo shows the stack-specific ramp I am already doing with React/Next.js, NestJS, TypeScript, PHP, SQL, and AWS-style debugging.
-
-## Early Contribution Plan
+## Early Contribution Areas
 
 ### First 30 Days
 
@@ -51,7 +47,7 @@ The demo includes:
 - Contribute meaningfully to AI-assisted features, quality workflows, or migration work.
 - Become reliable on tickets that require tracing issues across frontend, backend, data, and cloud logs.
 
-## Questions To Ask Dozuki
+## Product And Engineering Questions
 
 - How is work divided between the PHP monolith, NestJS modules, and microservices today?
 - Where is the team using AI most actively: authoring, review, search, training, or support?

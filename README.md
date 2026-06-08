@@ -1,22 +1,18 @@
-# Dozuki Stack Fit Demo
+# LineGuard Connected Worker Workflow
 
-Connected-worker engineering demo for manufacturing quality workflows.
+Fictional connected-worker product scenario for manufacturing quality workflows.
 
-This is a small connected-worker system design and code sample covering a React/Next.js frontend, a NestJS/TypeScript API, relational data modeling, legacy PHP compatibility, AI-assisted review logic, and AWS-style debugging.
+LineGuard is a fictional product used by Northstar Components, a fictional manufacturing customer. The workflow covers a React/Next.js frontend, a NestJS/TypeScript API, relational data modeling, legacy PHP compatibility, AI-assisted review logic, and AWS-style debugging.
 
 ## Live Demo
 
+View the deployed workflow: https://danthomasmanagement-debug.github.io/dozuki-stack-fit-demo/
+
 The frontend is configured for static export and GitHub Pages deployment. Publishing notes are in `docs/github-publish.md`.
 
-Suggested repo name:
+## Product Scenario
 
-```text
-dozuki-stack-fit-demo
-```
-
-## Product Idea
-
-Manufacturing teams need digital work instructions that are clear, auditable, and safe to execute. This demo models a simplified workflow:
+Northstar Components runs a packaging line where changeover mistakes can create quality escapes. LineGuard replaces static PDFs and tribal knowledge with guided instructions, required evidence, supervisor release gates, and audit-ready records.
 
 1. An operator opens a work instruction.
 2. The operator completes required steps and attaches evidence.
@@ -49,7 +45,7 @@ Dozuki's product lives where documentation, training, quality, safety, and softw
 
 The source notes in `docs/sources.md` map this project to Dozuki's public job posting and product pages.
 
-## How I Would Build This In Production
+## Implementation Shape
 
 - **Frontend:** Next.js, React, TypeScript.
 - **Backend:** NestJS modular monolith with service-layer boundaries.

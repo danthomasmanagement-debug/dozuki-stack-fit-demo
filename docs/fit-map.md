@@ -1,6 +1,6 @@
-# Fit Map: Daniel Thomas to Dozuki Software Engineer II
+# Fit Map: LineGuard to Dozuki Software Engineer II
 
-## The Gap Areas We Are Making Visible
+## Role Signals Reflected In The Project
 
 | Dozuki need | Demo evidence | Resume connection |
 | --- | --- | --- |
@@ -13,11 +13,10 @@
 | AI workflows | Review engine with deterministic guardrails | Claude, ChatGPT, Copilot/Codex workflows |
 | Documentation | Architecture notes and presentation outline | Runbooks, RCA notes, stakeholder communication |
 
-## Interview Summary
+## Project Summary
 
-My background is strongest in SQL, production troubleshooting, data quality, documentation, cross-functional systems work, and AI-assisted technical workflows. This project shows how I am applying those strengths to Dozuki's stack instead of pretending the stack-specific ramp does not exist.
+LineGuard makes the stack ramp concrete by pairing a manufacturing workflow with React/Next.js UI work, NestJS-style API boundaries, SQL-backed audit data, legacy PHP compatibility, AWS-style debugging, and AI review guardrails.
 
-## Sound Bite
+## Core Fit
 
-> I built this because Dozuki's role sits at the intersection of product engineering, manufacturing process quality, data integrity, and AI-assisted development. Those are areas where my background gives me a practical starting point, and this project shows the stack-specific ramp I am already doing.
-
+The project sits where Dozuki's role sits: product engineering, manufacturing process quality, data integrity, documentation, cloud debugging, and AI-assisted development with human review.

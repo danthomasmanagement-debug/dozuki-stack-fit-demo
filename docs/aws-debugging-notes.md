@@ -1,8 +1,6 @@
 # AWS Cloud Debugging Notes
 
-This is how I would talk about AWS experience honestly:
-
-> I have used AWS cloud context for debugging and investigation. I am not claiming to be the person who designed an entire AWS platform from scratch, but I am comfortable using cloud logs, request IDs, storage paths, and database traces to understand production issues.
+LineGuard models a practical cloud-debugging path for a common connected-worker issue: required evidence exists somewhere in the system, but the supervisor view still reports it as missing.
 
 ## Dozuki-Relevant Debugging Flow
 
@@ -17,7 +15,7 @@ Scenario: an operator uploads required photo evidence, but the supervisor review
 7. If S3 has the object but SQL is missing the reference, focus on API persistence logic.
 8. If SQL has the reference but UI does not show it, focus on frontend state or API response mapping.
 
-## AWS Services In This Demo Story
+## AWS Services In This Product Story
 
 - **CloudWatch:** request logs, error traces, correlation IDs.
 - **RDS/PostgreSQL:** instruction and work-run data.
@@ -26,7 +24,6 @@ Scenario: an operator uploads required photo evidence, but the supervisor review
 - **Lambda or ECS:** possible deployment target for review services.
 - **CloudFormation/Terraform:** infrastructure-as-code direction for production.
 
-## Interview Sound Bite
+## Debugging Principle
 
-> When I debug cloud issues, I try to avoid guessing. I follow the request ID through logs, storage, and database state until I can say exactly where the data stopped matching the user's experience.
-
+Avoid guessing. Follow the request ID through logs, storage, database state, API responses, and the user-facing view until the exact mismatch is visible.

@@ -43,13 +43,13 @@ const initialSteps: Step[] = [
 const modeCopy: Record<Mode, { label: string; title: string; text: string }> = {
   author: {
     label: "Author",
-    title: "AI-assisted authoring turns tribal knowledge into controlled work.",
-    text: "The authoring view models document control, versioning, required evidence, and approval state before instructions reach the floor."
+    title: "Quality owns the approved LineGuard procedure.",
+    text: "The authoring view models document control, versioning, required evidence, and approval state before instructions reach Northstar's packaging line."
   },
   execute: {
     label: "Execute",
-    title: "Operators get a guided workflow with evidence gates.",
-    text: "The workflow keeps the next action obvious, captures proof, and prevents quiet approval when required information is missing."
+    title: "Operators get a guided changeover with evidence gates.",
+    text: "The workflow keeps the next action obvious, captures proof, and prevents quiet release when required information is missing."
   },
   review: {
     label: "Review",
@@ -107,12 +107,12 @@ export function ConnectedWorkerCommandCenter() {
     <section aria-labelledby="command-title" className="command-shell">
       <div className="command-top">
         <div>
-          <p className="eyebrow">Interactive Demo</p>
-          <h2 id="command-title">Connected worker command center</h2>
+          <p className="eyebrow">Interactive Product Slice</p>
+          <h2 id="command-title">LineGuard changeover console</h2>
           <p>
-            A product-engineering slice for controlled procedures, guided
-            execution, AI review guardrails, and request-level production
-            debugging from browser state to database row.
+            A working product flow for controlled procedures, guided execution,
+            AI review guardrails, and request-level production debugging from
+            browser state to database row.
           </p>
         </div>
         <div className="readiness-card" aria-label="Readiness score">
@@ -167,9 +167,9 @@ export function ConnectedWorkerCommandCenter() {
           )}
         </div>
 
-        <aside className="console-panel side-console" aria-label="Engineering proof">
-          <p className="eyebrow">Engineering Proof</p>
-          <h3>Why this is not just a mockup</h3>
+        <aside className="console-panel side-console" aria-label="Implementation details">
+          <p className="eyebrow">Under the Hood</p>
+          <h3>What makes the workflow credible</h3>
           <ul className="proof-list">
             <li>Next.js static export deploys to GitHub Pages.</li>
             <li>NestJS services separate instruction, review, and cloud-debug logic.</li>
@@ -178,7 +178,7 @@ export function ConnectedWorkerCommandCenter() {
             <li>Tests validate missing evidence and incomplete work runs.</li>
           </ul>
           <div className="impact-card">
-            <span>Early contribution lane</span>
+            <span>Engineering lane</span>
             <strong>
               Debug data/API issues, improve test coverage, document production
               workflows, and help ship guarded AI features.
@@ -206,7 +206,7 @@ function AuthorView() {
     <div className="author-board">
       <div className="author-card approved">
         <span>v3.2 approved</span>
-        <strong>Line Changeover Quality Check</strong>
+        <strong>Northstar Packaging Line 4 Changeover</strong>
         <p>Owner: Quality Ops | Review cadence: quarterly | Approval: supervisor required</p>
       </div>
       <div className="author-card">
@@ -356,7 +356,7 @@ function TraceView({ steps }: { steps: Step[] }) {
       </div>
       <div className="trace-row">
         <span>S3</span>
-        <strong>Check evidence prefix /line-4/run-8392/</strong>
+        <strong>Check evidence prefix /northstar/line-4/run-8392/</strong>
       </div>
       <div className="trace-row">
         <span>RDS</span>
@@ -494,7 +494,7 @@ function buildAuditEvents(steps: Step[], findings: ReturnType<typeof buildFindin
     {
       time: "09:13",
       title: "Operator started work run",
-      detail: "Request ID req_20260606_1542_changeover created for Packaging Line 4."
+      detail: "Request ID req_20260606_1542_changeover created for Northstar Packaging Line 4."
     }
   ];
 
