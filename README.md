@@ -1,8 +1,10 @@
-# LineGuard Connected Worker Workflow
+# LineGuard Manual-to-Digital Work Instruction Demo
 
-Fictional connected-worker product scenario for manufacturing quality workflows.
+Fictional connected-worker product scenario showing how an old paper instruction manual and form fill-out process can become a Dozuki-ready digital workflow.
 
-LineGuard is a fictional product used by Northstar Components, a fictional manufacturing customer. The workflow covers a React/Next.js frontend, a NestJS/TypeScript API, relational data modeling, legacy PHP compatibility, AI-assisted review logic, and AWS-style debugging.
+LineGuard is a fictional product used by Northstar Components, a fictional manufacturing customer. The demo starts with a familiar manufacturing problem: printed binders, static PDFs, handwritten release forms, tribal knowledge, and inconsistent evidence. It turns that into visual step-by-step guides, live version publishing, training progress, worker feedback, supervisor release gates, audit trails, and production debugging.
+
+The implementation also maps to Dozuki's engineering stack: React/Next.js frontend, NestJS/TypeScript API shape, relational data modeling, legacy PHP compatibility, AI-assisted review logic, and AWS-style debugging.
 
 ## Live Demo
 
@@ -12,17 +14,20 @@ The frontend is configured for static export and GitHub Pages deployment. Publis
 
 ## Product Scenario
 
-Northstar Components runs a packaging line where changeover mistakes can create quality escapes. LineGuard replaces static PDFs and tribal knowledge with guided instructions, required evidence, supervisor release gates, and audit-ready records.
+Northstar Components runs a packaging line where changeover mistakes can create quality escapes. The old process is a paper manual plus a release form workers fill out after the job. LineGuard turns that manual into a live digital instruction system.
 
-1. An operator opens a work instruction.
-2. The operator completes required steps and attaches evidence.
-3. A backend service stores the run, validates required data, and produces an AI-assisted review.
-4. A supervisor sees findings, missing evidence, and cloud-debugging context.
-5. Legacy PHP endpoints can still read instruction data during migration.
+1. A quality lead converts the old manual into visual steps with photos, video prompts, required tools, and safety notes.
+2. A new procedure version moves from draft to QA approval to live publish.
+3. Workers open the latest guide by device or QR code instead of using stale paper.
+4. Training progress is tracked from the same controlled guide.
+5. Operators submit feedback when a step is confusing, missing media, or mismatched to the floor.
+6. A supervisor sees findings, missing evidence, training status, and cloud-debugging context before release.
+7. Legacy PHP endpoints can still read instruction data during migration.
 
 ## What This Demonstrates
 
 - **Frontend frameworks:** React component structure, typed props, accessible status UI, API client separation.
+- **Dozuki-style product workflows:** Visual guide builder, QR/live publishing, training progress, worker feedback, and supervisor release gates.
 - **OOP and modern development:** Service classes, DTOs, dependency injection, typed domain models, deterministic validation before AI output.
 - **TypeScript and NestJS:** Controller/service/module style, route boundaries, testable backend logic.
 - **PHP:** Legacy-style endpoint and gateway pattern with parameterized SQL.
@@ -33,9 +38,12 @@ Northstar Components runs a packaging line where changeover mistakes can create 
 
 ## Why It Fits Dozuki
 
-Dozuki's product lives where documentation, training, quality, safety, and software reliability overlap. This project intentionally combines:
+Dozuki's product lives where documentation, training, quality, safety, and software reliability overlap. This project intentionally centers the story on turning an old manual/form process into a modern digital workflow:
 
-- Work instructions and operator UX.
+- Visual work instructions and operator UX.
+- Live guide updates through versioned publishing.
+- Training courses and worker progress.
+- Real-time worker feedback routed to the right owner.
 - Relational data and audit history.
 - Human-in-the-loop AI review.
 - Legacy system compatibility.
